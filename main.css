@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);          /*block1 background*/
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);   /*block2 background, block5 text and block3 text*/
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);  /*block4 background*/
+    
+    --light-gray-blue: hsl(0, 0%, 81%);             /**/
+    --light-grayish-blue: hsl(210, 46%, 95%);       /*background*/ 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+    background-color: var(--light-grayish-blue);
+    font-size: 13px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+}
+
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.cards {
+    width: 100vw;
+    margin: 50px 200px;
+    display: grid;
+    grid-gap: 1.3rem;
+    grid-template: "block-1 block-1 block-2 block-5"
+                   "block-3 block-4 block-4 block-5";
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.cards>div {
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+
+/*----- image and name  -----*/
+.card-header {
+    display: flex;
+}
+.card-header>div {
+    padding-right: 20px;
+}
+.card-header>div>img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+
+.block-1 {
+    grid-area: block-1;
+    background-color: var(--moderate-violet);
+    color: white;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 0.1);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position-x: 85%;
+}
+
+.block-2 {
+    grid-area: block-2;
+    background-color: var(--very-dark-grayish-blue);
+    color: white;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 0.1);
+}
+
+.block-3 {
+    grid-area: block-3;
+    background-color: white;
+    color: var(--very-dark-grayish-blue);
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 0.1);
+}
+.block-4 {
+    grid-area: block-4;
+    background-color: var(--very-dark-blackish-blue);
+    color: white;
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 0.1);
+}
+
+.block-5 {
+    grid-area: block-5;
+    background-color: white;
+    color: var(--very-dark-grayish-blue);
+    box-shadow: 10px 10px 10px rgb(0 0 0 / 0.1);
+}
+
+/*----- "Verified Graduate" and small text -----*/
+.tag-light {
+    color: rgba(255, 255, 255, 0.4);
+    font-weight: 500;
+}
+.tag-dark {
+    color: rgb(25, 33, 46, 0.4);
+    font-weight: 500;
+}
+
+/*----- padding top and bottom for large text-----*/
+.line-height {
+    padding: 1rem 0;
+}
+
+/*----- blue border for profile img (daniel,patrick) -----*/
+.profile-img {
+    border: 2px solid hsl(240, 100%, 69%);
+}
+
+
+/*----- tablet -----*/
+@media (min-width: 376px) and (max-width:768px) {
+    .cards {
+        grid-template-areas: "block-1 block-1"
+                             "block-2 block-3"
+                             "block-4 block-4"
+                             "block-5 block-5";
+        grid-template-columns: repeat(2, 1fr);
+        margin: 20px 100px;
+    }
+}
+
+/*----- mobile -----*/
+@media (max-width: 375px) {
+    .cards {
+        grid-template-areas: "block-1"
+                             "block-2"
+                             "block-3"
+                             "block-4"
+                             "block-5";
+        grid-template-columns: none;
+        margin: 5px 20px;
+    }
+}
