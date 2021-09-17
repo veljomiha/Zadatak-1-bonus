@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
 
 :root {
-    --moderate-violet: hsl(263, 55%, 52%);          /*block1 background*/
-    --very-dark-grayish-blue: hsl(217, 19%, 35%);   /*block2 background, block5 text and block3 text*/
-    --very-dark-blackish-blue: hsl(219, 29%, 14%);  /*block4 background*/
-    
-    --light-gray-blue: hsl(0, 0%, 81%);             /**/
-    --light-grayish-blue: hsl(210, 46%, 95%);       /*background*/ 
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --light-gray-blue: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 * {
@@ -37,7 +36,7 @@ body {
     display: grid;
     grid-gap: 1.3rem;
     grid-template: "block-1 block-1 block-2 block-5"
-                   "block-3 block-4 block-4 block-5";
+        "block-3 block-4 block-4 block-5";
     grid-template-columns: repeat(4, 1fr);
 }
 
@@ -51,9 +50,11 @@ body {
 .card-header {
     display: flex;
 }
+
 .card-header>div {
     padding-right: 20px;
 }
+
 .card-header>div>img {
     border-radius: 50%;
     width: 30px;
@@ -84,6 +85,7 @@ body {
     color: var(--very-dark-grayish-blue);
     box-shadow: 10px 10px 10px rgb(0 0 0 / 0.1);
 }
+
 .block-4 {
     grid-area: block-4;
     background-color: var(--very-dark-blackish-blue);
@@ -99,12 +101,23 @@ body {
 }
 
 /*----- "Verified Graduate" and small text -----*/
-.tag-light {
-    color: rgba(255, 255, 255, 0.4);
+.verified-graduate-light {
+    color: rgba(255, 255, 255, 0.5);
     font-weight: 500;
 }
-.tag-dark {
-    color: rgb(25, 33, 46, 0.4);
+
+.verified-graduate-dark {
+    color: rgb(25, 33, 46, 0.5);
+    font-weight: 500;
+}
+
+.small-text-light {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+}
+
+.small-text-dark {
+    color: rgba(64, 103, 165, 0.7);
     font-weight: 500;
 }
 
@@ -123,9 +136,9 @@ body {
 @media (min-width: 376px) and (max-width:768px) {
     .cards {
         grid-template-areas: "block-1 block-1"
-                             "block-2 block-3"
-                             "block-4 block-4"
-                             "block-5 block-5";
+            "block-2 block-3"
+            "block-4 block-4"
+            "block-5 block-5";
         grid-template-columns: repeat(2, 1fr);
         margin: 20px 100px;
     }
@@ -135,10 +148,10 @@ body {
 @media (max-width: 375px) {
     .cards {
         grid-template-areas: "block-1"
-                             "block-2"
-                             "block-3"
-                             "block-4"
-                             "block-5";
+            "block-2"
+            "block-3"
+            "block-4"
+            "block-5";
         grid-template-columns: none;
         margin: 5px 20px;
     }
